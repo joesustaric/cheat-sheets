@@ -210,4 +210,6 @@ TODO
 [Virtual Methods](http://ruby-doc.com/docs/ProgrammingRuby/html/tut_classes.html#UC)   
 .defined?  
 gem 'some_lib', require: false  
+Understand Rake and rake tasks  
+Rack + Rack apps  
 
