@@ -190,7 +190,7 @@ my_hash.each { |key,value| puts "#{key} = #{value}" }
 You can specify defaults, or variable arguments
 ```Ruby
 # defaults
-def methos_one( name, age = 18)
+def method_one( name, age = 18)
   # stuff
 end
 # n number of Args
@@ -200,6 +200,33 @@ end
 ```
 asterisk referred to as splat
 You can have only 1 * arg in a list.
+
+### Map and Inject  
+`map` takes a block and runs through the collection calling the block for each element.  
+Will return an array of all the items returned by the block.  
+Useful for transforms. e.g
+```Ruby
+strings = ['ONE', 'TWO', 'FOUR']
+pp strings.map { |word| word.size }
+# will print
+# [3, 3, 4]
+
+# transform
+result = strings.map { |word| word.downcase }
+pp result
+# ['one', 'two', 'four']
+```  
+
+`inject` takes a block and calls the block with each element and the current result.  
+When all the elements are iterated it will return the result as it's final value.  
+```Ruby
+total = words.inject(0.0){ |result, word| word.size + result }
+```
+
+### Bangs!  
+`!` means that the method being called on the object is the 'dangerous' or 'surprising' version
+of a pair of methods. eg `words.reverse` returns a copy `words.reverse!` will change the words
+object to now be in reverse order.  
 
 
 
@@ -212,4 +239,3 @@ TODO
 gem 'some_lib', require: false  
 Understand Rake and rake tasks  
 Rack + Rack apps  
-
