@@ -228,7 +228,38 @@ total = words.inject(0.0){ |result, word| word.size + result }
 of a pair of methods. eg `words.reverse` returns a copy `words.reverse!` will change the words
 object to now be in reverse order.  
 
+### Strings  
+Single quote string = string literals. No interpolation.  
+Ruby strings are mutable.  
+```Ruby
+a_string_with_a_quote = 'something\'s gone wrong'  
+string_with_backslash = 'sting with backslash \\'
+```  
+With double quotes you can put characters like new lines and tabs etc..  
+```Ruby
+double_quoted = " something tab \t and a newline \n"
+```  
+You can also embed arbitrary expressions.  
+```Ruby
+name = 'Joe'
+hello_string = " Hello my name is #{name}"
+# If you had to mix and match quotes like this
+string_eg = '"Stop", she said, "I can\'t live without \'s and "s.'
+string_eq = %q{"Stop". she said, "I can't live without 's and "s."}
+# or
+time_string = %Q{The time is #{Time.now}}
 
+# You can span lines
+string_eg = %Q{hello spanning \
+multiple lines with no new line character}
+multi_line_string = <<EOF
+Something backslash
+blah backslash
+end
+EOF
+
+```
+Ruby string API http://ruby-doc.org/core-2.2.0/String.html  
 
 ### How to Comment Ruby Code
 TODO  
