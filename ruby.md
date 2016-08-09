@@ -261,6 +261,21 @@ EOF
 ```
 Ruby string API http://ruby-doc.org/core-2.2.0/String.html  
 
+### Regexp  
+Works very similarly to other regexes.  
+```Ruby  
+puts /Joe/ =~ 'Hello Joe'
+# Will print 6 (matched at the 6th character)
+puts /Foo/ =~ 'Bar'  
+# Will return nil  
+```  
+Global Substitution on strings.  
+```Ruby
+my_string = 'Hello Joe Whats going on Foo Bar'
+my_string.gsub!( /Joe/, 'Ruby')
+# String now = Hello Ruby Whats going on Foo Bar  
+```
+
 ### How to Comment Ruby Code
 TODO  
 
