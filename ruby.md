@@ -276,6 +276,21 @@ my_string.gsub!( /Joe/, 'Ruby')
 # String now = Hello Ruby Whats going on Foo Bar  
 ```
 
+### Symbols  
+There can only be one instance of any given symbol.  
+
+```Ruby
+a = :all
+b = a
+c = :all
+```  
+`a b c` are all refer to exactly the same object.  
+** They make ideal hash keys **   
+```Ruby
+my_string = :all.to_s
+the_symbol = my_string.to_sym
+```
+
 ### How to Comment Ruby Code
 TODO  
 
