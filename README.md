@@ -1,4 +1,5 @@
 # Cheat Sheets
-for revising  
+For Revising / Quick Examples    
 
-TODO more detail here
+### Ruby
+- [Language](ruby.md)
