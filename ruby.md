@@ -7,7 +7,7 @@ With help from the 'Eloquent Ruby' book.
 Code indentation **2 Spaces**.  
 Don't use tabs to indent.  
 **Camel Case** for classes.  
-**Snake Case** everywhere else.
+**Snake Case** everywhere else.  
 **Caps Snake Case** for constants.  
 
 ``` Ruby
@@ -69,7 +69,32 @@ end
 if this_variable_is_true
   # do stuff
 end
+```  
+### Ruby is Dynamically Typed
+No need to specify instance types. Just make them.  
+No need for complicated inheritance.  
+```Ruby
+class Thing1
+  def do_something
+    # something
+  end
+end
+
+class Thing2
+  def do_something
+    # something
+  end
+end
+
+def do_stuff(a_thing)
+  a_thing.do_something # will work for both Thing1 and Thing2 classes
+end
+
 ```
+try to avoid type checking  
+`raise 'not a string' unless obj.kind_of? String`  
+
+
 #### Folding Up Blocks  
 Do it if the line is **not too long and easy to read** usually a single statement.  
 ```Ruby
