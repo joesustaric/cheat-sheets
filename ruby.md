@@ -289,7 +289,77 @@ c = :all
 ```Ruby
 my_string = :all.to_s
 the_symbol = my_string.to_sym
-```
+```  
+
+### Classes / Instances / Methods  
+Everything is an Object. Ruby is a OO language.  
+Everything is can be traced back to `Object` class.  
+
+```Ruby
+require 'another_class'
+
+class Document
+  # ...
+  attr_accessor :content
+  attr_reader :name
+  attr_writer :stuff
+
+  def words
+    @content.split
+  end
+
+  def word_count
+    words.size
+  end
+
+  def a_private_method
+    # something
+  end
+
+  # You can over write inherited methods
+  def to_s
+    'Overwritten to_s method'
+  end
+
+  private :a_private_method #list your private methods
+  public :word_count, :words # etc
+  protected
+end
+```  
+Private methods are callable from subclasses, and also private to this object instance. (**Exception of [.send](###send)**)
+Public is public.
+Protected methods can be called by any instance of a class can call a protected method on any other instance of the class.  
+It will call `self.` automatically. ie `words.size = self.words.size`  
+If you don't specify a super class, it will be a sub class of `Object`.  
+`require` is a method that takes in a file name and executes the ruby code, it wont parse files twice. (like importing)
+
+```Ruby
+class Novel < Document
+  # more class stuff
+end
+```  
+
+### Reflection  
+You can reflect on a ruby object. There are many methods you can call eg..  
+```Ruby
+my_object.instance_methods  
+my_object.instance_variables
+# etc..
+```  
+
+## Interesting Ruby stuff
+### eval
+`eval` method will execute ruby code.  
+```Ruby
+cmd = gets
+puts( eval(cmd) )
+```  
+
+### send
+You can access a method by using `.send`. Even if its private.  
+```Ruby
+n = my_object.send(:my_private_method)
+```  
 
 ### How to Comment Ruby Code
 TODO  
