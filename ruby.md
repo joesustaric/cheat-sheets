@@ -326,7 +326,7 @@ class Document
   protected
 end
 ```  
-Private methods are callable from subclasses, and also private to this object instance. (**Exception of [.send](###send)**)
+Private methods are callable from subclasses, and also private to this object instance. (**Exception of [.send](#send)**)
 Public is public.
 Protected methods can be called by any instance of a class can call a protected method on any other instance of the class.  
 It will call `self.` automatically. ie `words.size = self.words.size`  
