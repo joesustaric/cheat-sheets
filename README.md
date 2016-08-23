@@ -2,4 +2,4 @@
 For Revising / Quick Examples    
 
 ### Ruby
-- [Language](ruby.md)
+- [Language](ruby/ruby.md)
