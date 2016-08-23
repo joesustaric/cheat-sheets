@@ -379,6 +379,10 @@ my_object.instance_variables
 cmd = gets
 puts( eval(cmd) )
 ```  
+### ++ and --
+Ruby does not use these i.e can't use `int_var++` to increment by one.  
+http://stackoverflow.com/a/3717565   
+``
 
 ### send
 You can access a method by using `.send`. Even if its private.  
