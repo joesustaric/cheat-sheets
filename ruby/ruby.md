@@ -372,6 +372,28 @@ my_object.instance_variables
 # etc..
 ```  
 
+### Operator Overloading
+Can be done.  
+Binary operator.  
+my_something + other_something
+```Ruby
+class Something
+  ...
+  def +(other)
+    # my definition
+  end
+end
+```  
+Unary operators. eg +my_something
+```Ruby
+class Something
+  ...
+  def +@
+    # my definition
+  end
+end
+```  
+
 ## Interesting Ruby stuff
 ### eval
 `eval` method will execute ruby code.  
@@ -389,6 +411,18 @@ You can access a method by using `.send`. Even if its private.
 ```Ruby
 n = my_object.send(:my_private_method)
 ```  
+
+### Overwriting []  
+You can make an object look like a []. By overwriting it.  
+```Ruby
+class Something
+  ...
+  def [](index)
+    string_words[index]
+  end
+end
+```  
+Add a size method too..  
 
 ### How to Comment Ruby Code
 TODO  
