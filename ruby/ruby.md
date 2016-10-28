@@ -2,6 +2,7 @@
 I decided to do create this as part of my ruby revision.  
 Quick guide for me to keep track of ruby idioms and small how to examples.  
 With help from the 'Eloquent Ruby' book.  
+https://github.com/bbatsov/ruby-style-guide
 
 ### Basic Stuff
 Code indentation **2 Spaces**.  
