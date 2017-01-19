@@ -434,3 +434,4 @@ TODO
 gem 'some_lib', require: false  
 Understand Rake and rake tasks  
 Rack + Rack apps  
+Quick Ref for reading and writing to files. (Esp note when file handles are left open) .  
