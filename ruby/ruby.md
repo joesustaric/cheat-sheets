@@ -216,11 +216,11 @@ my_hash.each { |key,value| puts "#{key} = #{value}" }
 You can specify defaults, or variable arguments
 ```Ruby
 # defaults
-def method_one( name, age = 18)
+def method_one(name, age = 18)
   # stuff
 end
 # n number of Args
-def print_names( *names )
+def print_names(*names)
   names.each { |name| puts name }
 end
 ```
@@ -247,7 +247,9 @@ pp result
 When all the elements are iterated it will return the result as it's final value.  
 ```Ruby
 total = words.inject(0.0){ |result, word| word.size + result }
-```
+```  
+If you don't provide a starting value in the call, it will skip the first element and
+use it as the starting value.  
 
 ### Bangs!  
 `!` means that the method being called on the object is the 'dangerous' or 'surprising' version
@@ -268,7 +270,7 @@ double_quoted = " something tab \t and a newline \n"
 You can also embed arbitrary expressions.  
 ```Ruby
 name = 'Joe'
-hello_string = " Hello my name is #{name}"
+hello_string = "Hello my name is #{name}"
 # If you had to mix and match quotes like this
 string_eg = '"Stop", she said, "I can\'t live without \'s and "s.'
 string_eq = %q{"Stop". she said, "I can't live without 's and "s."}
