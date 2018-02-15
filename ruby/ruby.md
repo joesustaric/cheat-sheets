@@ -427,6 +427,27 @@ end
 ```  
 Add a size method too..  
 
+### Equality =  
+Rubys object class has 4 quality methods.  
+`eql? equal? == ===`  
+`.equal?` test for object identity. eg `x.equal? y` would be true if x and y refer to the exact same object.
+
+`==` default with behave like `.equal?` can over wirte for own classes.  
+
+Using objects as keys in hashes.  
+The Ruby hash calls the `.hash` method to get the hash code for its keys.  
+ensure that if you override `a.eql? b` then `a.hash == b.hash`. eg  
+```Ruby
+def hash
+  a.hash ^ b.hash
+end
+def eql?(other)
+  a == other.a && b == other.b
+end
+```  
+`===` used more so for case statments.  
+To get object equality right
+
 ### How to Comment Ruby Code
 TODO  
 
