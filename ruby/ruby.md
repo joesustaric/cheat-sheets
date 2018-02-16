@@ -445,8 +445,30 @@ def eql?(other)
   a == other.a && b == other.b
 end
 ```  
-`===` used more so for case statments.  
+`===` used more so for case statements.  
 To get object equality right
+
+### Singleton  
+Singleton methods is a method that is defined for exactly one object instance.
+Can add them to objects on the fly.  
+```Ruby
+some_stub_object = Object.new
+
+def some_stub_object.hello
+  "hi"
+end
+# or
+
+class << some_stub_object
+  def some_check?
+    true
+  end
+
+  def another_method(blah)
+    "hello #{blah}"
+  end
+end
+```  
 
 ### How to Comment Ruby Code
 TODO  
