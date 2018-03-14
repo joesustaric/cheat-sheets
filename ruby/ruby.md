@@ -492,6 +492,7 @@ require 'foo'
 
 ```
 use if you're creating classes with the same prefix eg FooBar FooBaz FooJoe.
+Don't get carried away. Don't nest too deep.
 ### How to Comment Ruby Code
 TODO  
 
