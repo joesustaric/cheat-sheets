@@ -470,6 +470,28 @@ class << some_stub_object
 end
 ```  
 
+### Modules
+Module is a container. Cannot instantiate a module.
+Can hold methods, constants, classes and other modules.
+
+Purpose to group related things, to avoid namespace conflicts.
+
+```ruby
+module Foo
+  class Baz
+  end
+  module Bar
+    SOME_CONSTANT = 'blah'
+  end
+end
+
+Foo::Baz.new
+Foo::BAR::SOME_CONSTANT
+
+require 'foo'
+
+```
+use if you're creating classes with the same prefix eg FooBar FooBaz FooJoe.
 ### How to Comment Ruby Code
 TODO  
 
