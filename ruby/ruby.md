@@ -492,7 +492,44 @@ require 'foo'
 
 ```
 use if you're creating classes with the same prefix eg FooBar FooBaz FooJoe.
-Don't get carried away. Don't nest too deep.
+Don't get carried away. Don't nest too deep.  
+
+#### as mixins
+* Mixing allows you to share common code amongst unrelated Classes
+
+```ruby
+module Stuff
+  SOME_CONSTANT = "blah"
+
+  def figure_out_stuff
+    "done some stuff"
+  end
+end
+
+class Something
+  include Stuff
+  # Something Class..
+end
+
+class SomeBaseThing < AnotherThing
+  include Stuff
+  # AnotherThing class..
+end
+```
+* Including it means you have 'mixed it in'.
+* Can mixin multiple Modules
+* including a module puts it as a super of the class. see it in `instance_of_object.ancestors`.
+
+#### Mixins as class methods
+```ruby
+class SomeThing
+  class << self
+    include Stuff
+  end
+end
+```
+
+Methods are not self but written as instance level.
 ### How to Comment Ruby Code
 TODO  
 
