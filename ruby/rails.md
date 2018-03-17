@@ -1,5 +1,7 @@
 # Rails
-http://rubyonrails.org/ Current Version (as of 24/08/16) **5.0.0.1**  
+Always check out http://guides.rubyonrails.org/ first...
+
+http://rubyonrails.org/
 Rails is a MVC framework.  
 `gem install rails --version=5.0.0.1 --no-ri --no-rdoc`  
 Comes with a CLI `rails`.  
