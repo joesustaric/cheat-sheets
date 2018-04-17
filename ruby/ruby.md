@@ -530,6 +530,52 @@ end
 ```
 
 Methods are not self but written as instance level.
+
+#### Blocks..
+```ruby
+def do_something_with_block
+  yield if block_given?
+end
+
+do_something_with_block { puts "Do this thing.." }
+
+def with_x(thing)
+  begin
+    do_x
+    return_value = yield
+    do_x_again_or_y
+    return_value
+  rescue
+    print_thing_failed(thing)
+    raise
+end
+
+# Ensure stuff happens if things raise eg clean up handles.
+def with_connection(connection_info)
+  connection = Connect.new(connection_info)
+  begin
+    yield(connection)
+  ensure
+    connection.close
+  end
+end
+
+with_connection(connection_string) do |c|
+  do_stuff_with_connection(c)
+end
+
+```
+Passing blocks as parameters and calling them on demand.
+
+```ruby
+def run_a_block(&a_block)
+  a_block.call if a_block
+end
+#.call will execute the block if not nil.
+```
+
+TODO: difference between lambda / proc / Proc.new
+
 ### How to Comment Ruby Code
 TODO  
 
